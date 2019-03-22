@@ -1,0 +1,59 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Realsa account</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/sign-in/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" type="text/css">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link type="text/css" href="{% static 'bootstrap/css/signin.css' %}" rel="stylesheet">
+  </head>
+  <body class="text-center">
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-{{message.tags}}">
+        {{ message }}
+      </div>
+    {% endfor %}
+  {% endif %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <div align="center">
+      <img class="mb-4" src="{% static 'images/register.png' %}" alt="" width="72" height="72">
+      {% block namecontent %}
+      {% endblock %}
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'bootstrap/js/bootstrap.min.js' %}" type="text/css">
+</body>
+</html>

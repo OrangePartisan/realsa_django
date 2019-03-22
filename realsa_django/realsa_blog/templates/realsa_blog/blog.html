@@ -1,0 +1,10 @@
+{% extends "realsa_blog/layout.html" %}
+
+{% block content %}
+    <h3 class="center-align red lighten-3">{{title}}</h3>
+    <ul class="collection">
+      {% for realsa_blog_posts in realsa_blogs %}
+        <li class="collection-item"><a href="/realsa_blog/details/{{realsa_blog_posts.id}}">{{realsa_blog_posts.title}}</a></li>
+      {% endfor %}
+     </ul>
+{% endblock %}

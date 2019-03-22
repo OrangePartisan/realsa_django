@@ -1,0 +1,43 @@
+{% extends "realsa_useraccount/layout.html" %}
+{% load static %}
+
+{% block namecontent %}
+  <div class="card text-center" style="width: 24rem;">
+  <img class="card-img-top" src="{% static 'images/register_bg.jpg' %}" alt="">
+    <div class="card-body">
+      <h5 class="card-title">make blog account on<br>{%Realsa</h5>
+      <form action="/realsa_useraccount/" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button><!--<input type="submit" value="Submit">-->
+      </form>
+    </div>
+  </div>
+
+{% endblock namecontent %}
+
+{% block content %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <form action="realsa_useraccount/" method="post">
+                <label for="username">Screen Name: </label>
+                <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
+                <input type="submit" value="OK">
+            </form>
+
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Join Today</legend>
+                {{ form.as_p }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Sign up</button>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Already have an account? <a class="ml-2" href="#">Sign In</a>
+            </small>
+        </div>
+     </div>
+{% endblock content %}

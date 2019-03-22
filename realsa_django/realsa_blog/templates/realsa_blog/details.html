@@ -1,0 +1,16 @@
+{% extends 'realsa_blog/layout.html' %}
+
+
+{% block content %}
+<h3 class="center-align red lighten-3">{{post_detail.title}}</h3>
+<div class="card">
+  <div class="card-content">
+    {{post_detail.body}}
+  </div>
+  <div class="card-action">
+    {{post_detail.created_at}}
+  </div>
+</div>
+
+<a href="/realsa_blog" class="btn">Go back</a>
+{% endblock %}
